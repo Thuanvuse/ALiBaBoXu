@@ -1,1 +1,5 @@
-{'ducgiang123':{'NgayDangKy':'2/5/2023-18h20p','NgayHetHan':'17/5/2023-18h20p',}}
+{
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
