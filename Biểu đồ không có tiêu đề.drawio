@@ -1,65 +1,64 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="ERD Benh Vien" id="abcdefgh">
-    <mxGraphModel dx="1366" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169">
+  <diagram name="ERD - Quan ly benh vien" id="bv-erd-001">
+    <mxGraphModel dx="1500" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
-        <!-- Entity: BACSI -->
-        <mxCell id="bacsi" value="BACSI\n- MaBacSi (PK)\n- HoTen\n- DiaChi\n- SoDienThoai" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="160" height="120" as="geometry"/>
+        <!-- Table BACSI -->
+        <mxCell id="BACSI" value="&lt;b&gt;BACSI&lt;/b&gt;&#xa;PK MaBacSi&#xa;HoTen&#xa;DiaChi&#xa;SoDienThoai" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="160" height="140" as="geometry"/>
         </mxCell>
 
-        <!-- Entity: CHUYENKHOA -->
-        <mxCell id="chuyenkhoa" value="CHUYENKHOA\n- MaChuyenKhoa (PK)\n- TenChuyenKhoa" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
-          <mxGeometry x="300" y="40" width="160" height="100" as="geometry"/>
+        <!-- Table CHUYENKHOA -->
+        <mxCell id="CHUYENKHOA" value="&lt;b&gt;CHUYENKHOA&lt;/b&gt;&#xa;PK MaChuyenKhoa&#xa;TenChuyenKhoa" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="260" y="40" width="160" height="100" as="geometry"/>
         </mxCell>
 
-        <!-- Relation: BACSI_CHUYENKHOA -->
-        <mxCell id="rel_bacsi_ck" style="endArrow=none;startArrow=none;dashed=1;" edge="1" parent="1" source="bacsi" target="chuyenkhoa">
-          <mxGeometry relative="1" as="geometry"/>
+        <!-- Table BACSI_CHUYENKHOA -->
+        <mxCell id="BCK" value="&lt;b&gt;BACSI_CHUYENKHOA&lt;/b&gt;&#xa;PK,FK MaBacSi&#xa;PK,FK MaChuyenKhoa" style="shape=swimlane;childLayout=stackLayout;horizontal=0;fillColor=#f8f8f8;" vertex="1" parent="1">
+          <mxGeometry x="160" y="170" width="200" height="90" as="geometry"/>
         </mxCell>
 
-        <!-- Entity: BENHNHAN -->
-        <mxCell id="benhnhan" value="BENHNHAN\n- MaBenhNhan (PK)\n- HoTen\n- DiaChi\n- SoCMND" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="240" width="180" height="120" as="geometry"/>
+        <!-- Table BENHNHAN -->
+        <mxCell id="BENHNHAN" value="&lt;b&gt;BENHNHAN&lt;/b&gt;&#xa;PK MaBenhNhan&#xa;HoTen&#xa;DiaChi&#xa;SoCMND" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="180" height="120" as="geometry"/>
         </mxCell>
 
-        <!-- Entity: DIEUTRI -->
-        <mxCell id="dieutri" value="DIEUTRI\n- MaBacSi (PK,FK)\n- MaBenhNhan (PK,FK)\n- NgayGio (PK)\n- LieuPhap" style="shape=swimlane;childLayout=stackLayout;horizontal=0;fillColor=#f8f8f8;" vertex="1" parent="1">
-          <mxGeometry x="220" y="160" width="200" height="120" as="geometry"/>
+        <!-- Table DIEUTRI -->
+        <mxCell id="DIEUTRI" value="&lt;b&gt;DIEUTRI&lt;/b&gt;&#xa;PK,FK MaBacSi&#xa;PK,FK MaBenhNhan&#xa;PK NgayGio&#xa;LieuPhap" style="shape=swimlane;childLayout=stackLayout;horizontal=0;fillColor=#f8f8f8;" vertex="1" parent="1">
+          <mxGeometry x="260" y="280" width="200" height="120" as="geometry"/>
         </mxCell>
 
-        <!-- Relation: BACSI -> DIEUTRI -->
-        <mxCell id="rel_bacsi_dtr" style="endArrow=block;" edge="1" parent="1" source="bacsi" target="dieutri">
-          <mxGeometry relative="1" as="geometry"/>
+        <!-- Table YTA -->
+        <mxCell id="YTA" value="&lt;b&gt;YTA&lt;/b&gt;&#xa;PK MaYTa&#xa;HoTen&#xa;DiaChi&#xa;SoDienThoai" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="480" width="160" height="120" as="geometry"/>
         </mxCell>
 
-        <!-- Relation: BENHNHAN -> DIEUTRI -->
-        <mxCell id="rel_benhnhan_dtr" style="endArrow=block;" edge="1" parent="1" source="benhnhan" target="dieutri">
-          <mxGeometry relative="1" as="geometry"/>
+        <!-- Table CHAMSOC -->
+        <mxCell id="CHAMSOC" value="&lt;b&gt;CHAMSOC&lt;/b&gt;&#xa;PK,FK MaYTa&#xa;PK,FK MaBenhNhan&#xa;PK NgayChamSoc&#xa;NoiDung" style="shape=swimlane;childLayout=stackLayout;horizontal=0;fillColor=#f8f8f8;" vertex="1" parent="1">
+          <mxGeometry x="250" y="460" width="200" height="120" as="geometry"/>
         </mxCell>
 
-        <!-- Entity: YTA -->
-        <mxCell id="yta" value="YTA\n- MaYTa (PK)\n- HoTen\n- DiaChi\n- SoDienThoai" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="420" width="160" height="120" as="geometry"/>
+        <!-- Relations -->
+        <mxCell id="R1" style="endArrow=block;" edge="1" parent="1" source="BACSI" target="BCK">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Entity: CHAMSOC -->
-        <mxCell id="chamsoc" value="CHAMSOC\n- MaYTa (PK,FK)\n- MaBenhNhan (PK,FK)\n- NgayChamSoc (PK)\n- NoiDung" style="shape=swimlane;childLayout=stackLayout;horizontal=0;fillColor=#f8f8f8;" vertex="1" parent="1">
-          <mxGeometry x="250" y="360" width="200" height="120" as="geometry"/>
+        <mxCell id="R2" style="endArrow=block;" edge="1" parent="1" source="CHUYENKHOA" target="BCK">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Relation: YTA -> CHAMSOC -->
-        <mxCell id="rel_yta_cs" style="endArrow=block;" edge="1" parent="1" source="yta" target="chamsoc">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="R3" style="endArrow=block;" edge="1" parent="1" source="BACSI" target="DIEUTRI">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
-        <!-- Relation: BENHNHAN -> CHAMSOC -->
-        <mxCell id="rel_bn_cs" style="endArrow=block;" edge="1" parent="1" source="benhnhan" target="chamsoc">
-          <mxGeometry relative="1" as="geometry"/>
+        <mxCell id="R4" style="endArrow=block;" edge="1" parent="1" source="BENHNHAN" target="DIEUTRI">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-
+        <mxCell id="R5" style="endArrow=block;" edge="1" parent="1" source="YTA" target="CHAMSOC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="R6" style="endArrow=block;" edge="1" parent="1" source="BENHNHAN" target="CHAMSOC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
