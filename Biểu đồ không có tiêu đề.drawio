@@ -1,63 +1,55 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="ERD - Quan ly benh vien" id="bv-erd-001">
-    <mxGraphModel dx="1500" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+  <diagram name="ER Quản lý công ty vận tải" id="W5LhD3ZL9qghJ1WzOVP6">
+    <mxGraphModel dx="1166" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-
-        <!-- Table BACSI -->
-        <mxCell id="BACSI" value="&lt;b&gt;BACSI&lt;/b&gt;&#xa;PK MaBacSi&#xa;HoTen&#xa;DiaChi&#xa;SoDienThoai" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="160" height="140" as="geometry"/>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        
+        <!-- KhachHang -->
+        <mxCell id="KH" value="KhachHang\n+ MaKH (PK)\n+ TenKH\n+ DiaChi\n+ SDT\n+ Email" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="160" height="120" as="geometry"/>
         </mxCell>
 
-        <!-- Table CHUYENKHOA -->
-        <mxCell id="CHUYENKHOA" value="&lt;b&gt;CHUYENKHOA&lt;/b&gt;&#xa;PK MaChuyenKhoa&#xa;TenChuyenKhoa" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
-          <mxGeometry x="260" y="40" width="160" height="100" as="geometry"/>
+        <!-- TaiXe -->
+        <mxCell id="TX" value="TaiXe\n+ MaTX (PK)\n+ TenTX\n+ NgaySinh\n+ SDT\n+ BangLai" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="40" width="160" height="120" as="geometry"/>
         </mxCell>
 
-        <!-- Table BACSI_CHUYENKHOA -->
-        <mxCell id="BCK" value="&lt;b&gt;BACSI_CHUYENKHOA&lt;/b&gt;&#xa;PK,FK MaBacSi&#xa;PK,FK MaChuyenKhoa" style="shape=swimlane;childLayout=stackLayout;horizontal=0;fillColor=#f8f8f8;" vertex="1" parent="1">
-          <mxGeometry x="160" y="170" width="200" height="90" as="geometry"/>
+        <!-- PhuongTien -->
+        <mxCell id="PT" value="PhuongTien\n+ MaPT (PK)\n+ BienSo\n+ LoaiXe\n+ NamSX\n+ TrangThai" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="40" width="180" height="120" as="geometry"/>
         </mxCell>
 
-        <!-- Table BENHNHAN -->
-        <mxCell id="BENHNHAN" value="&lt;b&gt;BENHNHAN&lt;/b&gt;&#xa;PK MaBenhNhan&#xa;HoTen&#xa;DiaChi&#xa;SoCMND" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="300" width="180" height="120" as="geometry"/>
+        <!-- LichTrinh -->
+        <mxCell id="LT" value="LichTrinh\n+ MaLT (PK)\n+ NgayKhoiHanh\n+ NoiDi\n+ NoiDen\n+ TrangThai\n+ MaKH (FK)\n+ MaTX (FK)\n+ MaPT (FK)" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="220" width="230" height="140" as="geometry"/>
         </mxCell>
 
-        <!-- Table DIEUTRI -->
-        <mxCell id="DIEUTRI" value="&lt;b&gt;DIEUTRI&lt;/b&gt;&#xa;PK,FK MaBacSi&#xa;PK,FK MaBenhNhan&#xa;PK NgayGio&#xa;LieuPhap" style="shape=swimlane;childLayout=stackLayout;horizontal=0;fillColor=#f8f8f8;" vertex="1" parent="1">
-          <mxGeometry x="260" y="280" width="200" height="120" as="geometry"/>
+        <!-- LichSuVanChuyen -->
+        <mxCell id="LS" value="LichSuVanChuyen\n+ MaLS (PK)\n+ MaLT (FK)\n+ BatDau\n+ KetThuc\n+ GhiChu" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="400" width="200" height="100" as="geometry"/>
         </mxCell>
 
-        <!-- Table YTA -->
-        <mxCell id="YTA" value="&lt;b&gt;YTA&lt;/b&gt;&#xa;PK MaYTa&#xa;HoTen&#xa;DiaChi&#xa;SoDienThoai" style="shape=swimlane;childLayout=stackLayout;horizontal=0;" vertex="1" parent="1">
-          <mxGeometry x="40" y="480" width="160" height="120" as="geometry"/>
+        <!-- BaoDuong -->
+        <mxCell id="BD" value="BaoDuong\n+ MaBD (PK)\n+ MaPT (FK)\n+ Ngay\n+ NoiDung\n+ ChiPhi" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="220" width="180" height="100" as="geometry"/>
         </mxCell>
 
-        <!-- Table CHAMSOC -->
-        <mxCell id="CHAMSOC" value="&lt;b&gt;CHAMSOC&lt;/b&gt;&#xa;PK,FK MaYTa&#xa;PK,FK MaBenhNhan&#xa;PK NgayChamSoc&#xa;NoiDung" style="shape=swimlane;childLayout=stackLayout;horizontal=0;fillColor=#f8f8f8;" vertex="1" parent="1">
-          <mxGeometry x="250" y="460" width="200" height="120" as="geometry"/>
+        <!-- Edges -->
+        <mxCell id="e1" style="endArrow=block;html=1;" edge="1" parent="1" source="KH" target="LT">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-
-        <!-- Relations -->
-        <mxCell id="R1" style="endArrow=block;" edge="1" parent="1" source="BACSI" target="BCK">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="e2" style="endArrow=block;html=1;" edge="1" parent="1" source="TX" target="LT">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="R2" style="endArrow=block;" edge="1" parent="1" source="CHUYENKHOA" target="BCK">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="e3" style="endArrow=block;html=1;" edge="1" parent="1" source="PT" target="LT">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="R3" style="endArrow=block;" edge="1" parent="1" source="BACSI" target="DIEUTRI">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="e4" style="endArrow=block;html=1;" edge="1" parent="1" source="LT" target="LS">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
-        <mxCell id="R4" style="endArrow=block;" edge="1" parent="1" source="BENHNHAN" target="DIEUTRI">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="R5" style="endArrow=block;" edge="1" parent="1" source="YTA" target="CHAMSOC">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="R6" style="endArrow=block;" edge="1" parent="1" source="BENHNHAN" target="CHAMSOC">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="e5" style="endArrow=block;html=1;" edge="1" parent="1" source="PT" target="BD">
+          <mxGeometry relative="1" as="geometry"/>
         </mxCell>
       </root>
     </mxGraphModel>
