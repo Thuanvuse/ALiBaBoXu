@@ -1,18 +1,18 @@
 <mxfile host="app.diagrams.net">
-  <diagram name="ER Quản lý công ty vận tải" id="W5LhD3ZL9qghJ1WzOVP6">
-    <mxGraphModel dx="1166" dy="625" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+  <diagram name="ER Vận tải" id="6BangVanTai">
+    <mxGraphModel dx="1234" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
-        
+
         <!-- KhachHang -->
-        <mxCell id="KH" value="KhachHang\n+ MaKH (PK)\n+ TenKH\n+ DiaChi\n+ SDT\n+ Email" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="40" width="160" height="120" as="geometry"/>
+        <mxCell id="KH" value="KhachHang\n+ MaKH (PK)\n+ TenKH\n+ SDT\n+ DiaChi\n+ Email" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="180" height="120" as="geometry"/>
         </mxCell>
 
         <!-- TaiXe -->
         <mxCell id="TX" value="TaiXe\n+ MaTX (PK)\n+ TenTX\n+ NgaySinh\n+ SDT\n+ BangLai" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="300" y="40" width="160" height="120" as="geometry"/>
+          <mxGeometry x="300" y="40" width="180" height="120" as="geometry"/>
         </mxCell>
 
         <!-- PhuongTien -->
@@ -22,35 +22,40 @@
 
         <!-- LichTrinh -->
         <mxCell id="LT" value="LichTrinh\n+ MaLT (PK)\n+ NgayKhoiHanh\n+ NoiDi\n+ NoiDen\n+ TrangThai\n+ MaKH (FK)\n+ MaTX (FK)\n+ MaPT (FK)" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="190" y="220" width="230" height="140" as="geometry"/>
+          <mxGeometry x="200" y="200" width="260" height="140" as="geometry"/>
         </mxCell>
 
         <!-- LichSuVanChuyen -->
         <mxCell id="LS" value="LichSuVanChuyen\n+ MaLS (PK)\n+ MaLT (FK)\n+ BatDau\n+ KetThuc\n+ GhiChu" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="190" y="400" width="200" height="100" as="geometry"/>
+          <mxGeometry x="200" y="380" width="200" height="100" as="geometry"/>
         </mxCell>
 
         <!-- BaoDuong -->
         <mxCell id="BD" value="BaoDuong\n+ MaBD (PK)\n+ MaPT (FK)\n+ Ngay\n+ NoiDung\n+ ChiPhi" style="shape=swimlane;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="560" y="220" width="180" height="100" as="geometry"/>
+          <mxGeometry x="560" y="200" width="180" height="100" as="geometry"/>
         </mxCell>
 
         <!-- Edges -->
         <mxCell id="e1" style="endArrow=block;html=1;" edge="1" parent="1" source="KH" target="LT">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
+
         <mxCell id="e2" style="endArrow=block;html=1;" edge="1" parent="1" source="TX" target="LT">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
+
         <mxCell id="e3" style="endArrow=block;html=1;" edge="1" parent="1" source="PT" target="LT">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
+
         <mxCell id="e4" style="endArrow=block;html=1;" edge="1" parent="1" source="LT" target="LS">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
+
         <mxCell id="e5" style="endArrow=block;html=1;" edge="1" parent="1" source="PT" target="BD">
           <mxGeometry relative="1" as="geometry"/>
         </mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>
